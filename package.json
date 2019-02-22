@@ -1,19 +1,19 @@
 {
-  "name": "fill-out",
+  "name": "artist-search-ta",
   "version": "1.0.0",
   "description": "Project Description Stay tuned!",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MariahAdams/[ENTER-CORRECT-PATH].git"
+    "url": "git+https://github.com/MariahAdams/artist-search-TA.git"
   },
   "keywords": [],
   "author": "Mariah Adams",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MariahAdams/[ENTER-CORRECT-PATH]/issues"
+    "url": "https://github.com/MariahAdams/artist-search-TA/issues"
   },
-  "homepage": "https://github.com/MariahAdams/[ENTER-CORRECT-PATH]#readme",
+  "homepage": "https://github.com/MariahAdams/artist-search-TA#readme",
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
