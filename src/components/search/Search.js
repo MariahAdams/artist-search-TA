@@ -14,6 +14,7 @@ class Search extends Component {
     this.setState({ [target.name]: target.value });
   };
 
+  //TODO: async/await
   handleSearch = e => {
     e.preventDefault();
     getArtists(this.state.query)

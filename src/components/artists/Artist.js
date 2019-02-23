@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Artist extends Component {
 
   static propTypes = {
-    artist: PropTypes.string.isRequired
+    artist: PropTypes.object.isRequired
   };
 
   render() {

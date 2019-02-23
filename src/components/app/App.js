@@ -17,7 +17,7 @@ class App extends Component {
           <Switch>
             <Route path="/artists/:name/:id" component={ArtistDetail} />
             <Route path="/" component={Search} />
-            <Redirect to="/" />
+            <Redirect to="/home" />
           </Switch>
         </Router>
 
