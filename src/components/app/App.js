@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Header from './Header';
+import Search from '../search/Search';
 import Footer from './Footer';
 
 class App extends Component {
@@ -12,6 +13,8 @@ class App extends Component {
 
         <main>
 					Welcome to zApp!
+
+          <Search />
         </main>
 
         <Footer />
