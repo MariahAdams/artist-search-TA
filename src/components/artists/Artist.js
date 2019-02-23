@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ArtistDetail from './ArtistDetail';
 
 class Artist extends Component {
 
@@ -12,6 +13,7 @@ class Artist extends Component {
 
     return (
       <>
+        <ArtistDetail />
         <p>{artist}</p>
       </>
     );
