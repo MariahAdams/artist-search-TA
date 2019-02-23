@@ -11,14 +11,13 @@ class Artists extends Component {
   render() {
     const { artists } = this.props;
     const list = artists.map(artist => {
-      return <li key={artist.id}>{artist.name}</li>;
+      return <li key={artist.id}><Artist artist={artist.name}/></li>;
     });
     
     return (
       <>
       <h3>Artists Component</h3>
       <ul>
-        <Artist />
         {list}
       </ul>
       </>

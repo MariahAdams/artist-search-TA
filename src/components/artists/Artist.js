@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Artist extends Component {
 
+  static propTypes = {
+    artist: PropTypes.string.isRequired
+  };
+
   render() {
+    const { artist } = this.props;
 
     return (
       <>
-        <h3>Artist Component</h3>
+        <p>{artist}</p>
       </>
     );
   }
