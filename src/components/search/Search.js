@@ -25,7 +25,7 @@ class Search extends Component {
   };
 
   render() {
-    const { query } = this.state;
+    const { query, artists } = this.state;
 
     return (
       <>
@@ -34,7 +34,7 @@ class Search extends Component {
           <input type="text" name="query" value={query} onChange={this.handleChange}></input>
           <button onClick={this.handleSearch}>Search</button>
         </div>
-        <Artists />
+        <Artists artists={artists}/>
       </>
     );
   }
