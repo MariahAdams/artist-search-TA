@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Artist from './Artist';
 
 class Artists extends Component {
 
@@ -17,6 +18,7 @@ class Artists extends Component {
       <>
       <h3>Artists Component</h3>
       <ul>
+        <Artist />
         {list}
       </ul>
       </>
