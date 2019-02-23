@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ArtistDetail from './ArtistDetail';
+import { Link } from 'react-router-dom';
 
 class Artist extends Component {
 
@@ -13,8 +13,7 @@ class Artist extends Component {
 
     return (
       <>
-        <ArtistDetail />
-        <p>{artist}</p>
+        <Link to={`/artists/${artist.name}/${artist.id}`}>{artist.name}</Link>
       </>
     );
   }
