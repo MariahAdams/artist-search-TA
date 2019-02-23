@@ -12,8 +12,6 @@ class App extends Component {
         <Header />
 
         <main>
-					Welcome to zApp!
-
           <Search />
         </main>
 
