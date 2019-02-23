@@ -8,7 +8,7 @@ const buildDir = 'build';
 const path = resolve(__dirname, buildDir);
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path, 
     filename: 'bundle.[hash].js',
