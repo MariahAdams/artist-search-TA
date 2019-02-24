@@ -1,5 +1,6 @@
 .footer {
-
   color: gray;
-
+  position: fixed;
+  left: 1%;
+  bottom: 0;
 }
