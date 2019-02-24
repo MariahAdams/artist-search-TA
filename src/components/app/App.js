@@ -10,7 +10,6 @@ import Footer from './Footer';
 // nav --> back to search
 // header, footer
 // css
-// loading comp
 // better error handling
 
 class App extends PureComponent {
