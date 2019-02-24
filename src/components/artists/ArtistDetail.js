@@ -7,8 +7,7 @@ import { getWorks } from '../../services/artistApi';
 class ArtistDetail extends Component {
   
   state = {
-    works: [],
-    loading: false
+    works: []
   };
 
   static propTypes = {
@@ -17,15 +16,13 @@ class ArtistDetail extends Component {
 
   async componentDidMount() {
     const { id } = this.props.match.params;
-    this.setState({ works: [], loading: true });
-
     const res = await getWorks(id);
-    this.setState({ works: res.works, loading: false });
+    this.setState({ works: res.works });
   }
 
   render() {
     const { works } = this.state;
-    const { artist, loading } = this.props.match.params;
+    const { artist } = this.props.match.params;
 
     const worksList = works.map(work => {
       return <li key={work.id}>
@@ -37,8 +34,10 @@ class ArtistDetail extends Component {
       <>
         <h2>{artist}</h2>
         <ul>
-          {loading && <Loading />}
-          {worksList}
+          {!works
+            ? <Loading />
+            : [worksList]
+          }
         </ul>
       </>
     );

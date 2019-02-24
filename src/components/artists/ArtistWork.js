@@ -7,7 +7,6 @@ class ArtistWork extends Component {
 
   state = {
     lyrics: '',
-    loading: false,
     error: false,
     query: ''
   };
@@ -23,21 +22,23 @@ class ArtistWork extends Component {
 
   async componentDidMount() {
     const { artist, work } = this.props.match.params;
-    this.setState({ lyrics: '', loading: true });
-
     const res = await getLyrics(artist, work);
-    if(res.error) this.setState({ lyrics: res.error, error: true, query: this.formatQuery(artist, work), loading: false });
-    else this.setState({ lyrics: res.lyrics, loading: false });
+    if(res.error) this.setState({ lyrics: res.error, error: true, query: this.formatQuery(artist, work) });
+    else this.setState({ lyrics: res.lyrics });
   }
 
   render() {
-    const { lyrics, error, query, loading } = this.state;
+    const { lyrics, error, query } = this.state;
     const title = this.props.match.params.work;
 
     return (
       <>
         <h2>{title}</h2>
-        {loading ? <Loading /> : <pre>{lyrics}</pre>}
+        
+        {!lyrics 
+          ? <Loading /> 
+          : <pre>{lyrics}</pre>
+        }
         
         {error && <a rel="noopener noreferrer" target="_blank" href={`https://www.google.com/search?q=${query}`}>Try Google</a>}
       </>

@@ -34,8 +34,10 @@ class Search extends PureComponent {
           <button>Search</button>
         </form>
 
-        {loading && <Loading />}
-        {artists && <Artists artists={artists}/>}
+        {loading 
+          ? <Loading />
+          : <Artists artists={artists}/>
+        }
       </>
     );
   }
