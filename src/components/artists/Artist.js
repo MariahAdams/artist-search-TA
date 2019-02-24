@@ -12,9 +12,7 @@ class Artist extends Component {
     const { artist } = this.props;
 
     return (
-      <>
-        <Link to={`/artists/${artist.name}/${artist.id}`}>{artist.name}</Link>
-      </>
+      <Link to={`/artists/${artist.name}/${artist.id}`}>{artist.name}</Link>
     );
   }
 }

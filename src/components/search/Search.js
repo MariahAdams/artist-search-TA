@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Artists from '../artists/Artists';
 import { getArtists } from '../../services/artistApi';
 import styles from './Search.css';
 
-class Search extends Component {
+class Search extends PureComponent {
 
   state = {
     query: '',
@@ -14,13 +14,10 @@ class Search extends Component {
     this.setState({ [target.name]: target.value });
   };
 
-  //TODO: async/await
-  handleSearch = e => {
+  handleSearch = async(e) => {
     e.preventDefault();
-    getArtists(this.state.query)
-      .then(res => {
-        this.setState({ artists: res.artists });
-      });
+    const res = await getArtists(this.state.query);
+    this.setState({ artists: res.artists });
   };
 
   render() {
@@ -28,7 +25,7 @@ class Search extends Component {
 
     return (
       <>
-        <h2>Search Component</h2>
+        <h2>Artist Search</h2>
         <form onSubmit={this.handleSearch} className={styles.search}>
           <input type="text" name="query" placeholder="Enter an artist..." value={query} onChange={this.handleChange}></input>
           <button>Search</button>

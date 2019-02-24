@@ -13,12 +13,10 @@ class ArtistDetail extends Component {
     match: PropTypes.object
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { id } = this.props.match.params;
-    getWorks(id)
-      .then(res => {
-        this.setState({ works: res.works });
-      });
+    const res = await getWorks(id);
+    this.setState({ works: res.works });
   }
 
   render() {
@@ -33,7 +31,7 @@ class ArtistDetail extends Component {
 
     return (
       <>
-        <h3>Artist Detail Component</h3>
+        <h2>{artist}</h2>
         <ul>
           {worksList}
         </ul>

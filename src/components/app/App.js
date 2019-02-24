@@ -1,30 +1,35 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Search from '../search/Search';
 import ArtistDetail from '../artists/ArtistDetail';
 import ArtistWork from '../artists/ArtistWork';
 import Footer from './Footer';
+//TODO: 
+// paging
+// nav --> back to search
+// header, footer
+// css
 
-class App extends Component {
+class App extends PureComponent {
 
   render() {
 
     return (
-      <Fragment>
+      <>
         <Header />
 
         <Router>
           <Switch>
-            <Route exact path="/artists/:artist/:id" component={ArtistDetail} />
-            <Route exact path="/artists/:artist/:work/:id" component={ArtistWork} />
+            <Route path="/artists/:artist/:work/:id" component={ArtistWork} />
+            <Route path="/artists/:artist/:id" component={ArtistDetail} />
             <Route path="/" component={Search} />
             <Redirect to="/home" />
           </Switch>
         </Router>
 
         <Footer />
-      </Fragment>
+      </>
     );
   }
 }

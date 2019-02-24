@@ -11,7 +11,9 @@ class Artists extends Component {
   render() {
     const { artists } = this.props;
     const artistList = artists.map(artist => {
-      return <li key={artist.id}><Artist artist={artist}/></li>;
+      return <li key={artist.id}>
+        <Artist artist={artist} />
+      </li>;
     });
     
     return (

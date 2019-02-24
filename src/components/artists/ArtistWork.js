@@ -12,12 +12,11 @@ class ArtistWork extends Component {
     match: PropTypes.object
   };
 
-  componentDidMount() {
-    const { params } = this.props.match;
-    getLyrics(params.artist, params.work)
-      .then(res => {
-        this.setState({ lyrics: res.lyrics });
-      });
+  async componentDidMount() {
+    const { artist, work } = this.props.match.params;
+    const res = await getLyrics(artist, work);
+    // TODO: try google
+    this.setState({ lyrics: res.lyrics || res.error });
   }
 
   render() {
@@ -26,7 +25,7 @@ class ArtistWork extends Component {
 
     return (
       <>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <pre>{lyrics}</pre>
       </>
     );
