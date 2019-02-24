@@ -31,15 +31,3 @@ class App extends PureComponent {
 
 
 export default App;
-
-
-
-
-
-
-
-
-//TODO: 
-// paging
-// css
-// better error handling
