@@ -29,7 +29,6 @@ class Search extends PureComponent {
 
     return (
       <>
-        <h2>Artist Search</h2>
         <form onSubmit={this.handleSearch} className={styles.search}>
           <input type="text" name="query" placeholder="Enter an artist..." value={query} onChange={this.handleChange}></input>
           <button>Search</button>

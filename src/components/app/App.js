@@ -11,20 +11,20 @@ class App extends PureComponent {
   render() {
 
     return (
-      <>
-        <Header />
+      <Router>
+        <>
+          <Header />
 
-        <Router>
           <Switch>
             <Route path="/artists/:artist/:work/:id" component={ArtistWork} />
             <Route path="/artists/:artist/:id" component={ArtistDetail} />
             <Route path="/" component={Search} />
             <Redirect to="/home" />
           </Switch>
-        </Router>
 
-        <Footer />
-      </>
+          <Footer />
+        </>
+      </Router>
     );
   }
 }
@@ -41,7 +41,5 @@ export default App;
 
 //TODO: 
 // paging
-// nav --> back to search
-// header, footer
 // css
 // better error handling
