@@ -23,11 +23,11 @@ class ArtistDetail extends Component {
 
   render() {
     const { works } = this.state;
-    const artist = this.props.match.params;
+    const { artist } = this.props.match.params;
 
     const worksList = works.map(work => {
       return <li key={work.id}>
-        <Link to={`/artists/${artist.name}/${work.title}/${work.id}`}>{work.title}</Link>
+        <Link to={`/artists/${artist}/${work.title}/${work.id}`}>{work.title}</Link>
       </li>;
     });
 

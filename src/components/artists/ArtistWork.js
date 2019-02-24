@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { getLyrics } from '../../services/artistApi';
 
 class ArtistWork extends Component {
 
@@ -7,8 +8,14 @@ class ArtistWork extends Component {
     match: PropTypes.object
   };
 
-  render() {
+  componentDidMount() {
     console.log('work match', this.props.match.params);
+    const { params } = this.props.match;
+    //getLyrics()
+    
+  }
+
+  render() {
 
     return (
       <>

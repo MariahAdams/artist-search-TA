@@ -16,8 +16,8 @@ class App extends Component {
 
         <Router>
           <Switch>
-            <Route exact path="/artists/:name/:id" component={ArtistDetail} />
-            <Route exact path="/artists/:name/:work/:id" component={ArtistWork} />
+            <Route exact path="/artists/:artist/:id" component={ArtistDetail} />
+            <Route exact path="/artists/:artist/:work/:id" component={ArtistWork} />
             <Route path="/" component={Search} />
             <Redirect to="/home" />
           </Switch>
