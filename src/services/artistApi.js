@@ -7,3 +7,10 @@ export const getWorks = async(artistId) => {
   const res = await fetch(`http://musicbrainz.org/ws/2/artist/${artistId}?fmt=json&inc=works`);
   return res.json();
 };
+
+export const getLyrics = async(artist, song) => {
+  //TODO: format artist and song with regex
+
+  const res = await fetch(`https://api.lyrics.ovh/v1/${artist}/${song}`);
+  return res.json();
+};

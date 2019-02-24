@@ -14,8 +14,8 @@ class ArtistDetail extends Component {
   };
 
   componentDidMount() {
-    const { match } = this.props;
-    getWorks(match.params.id)
+    const { id } = this.props.match.params;
+    getWorks(id)
       .then(res => {
         this.setState({ works: res.works });
       });

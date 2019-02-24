@@ -10,13 +10,13 @@ class Artists extends Component {
 
   render() {
     const { artists } = this.props;
-    const list = artists.map(artist => {
+    const artistList = artists.map(artist => {
       return <li key={artist.id}><Artist artist={artist}/></li>;
     });
     
     return (
       <ul>
-        {list}
+        {artistList}
       </ul>
     );
   }
