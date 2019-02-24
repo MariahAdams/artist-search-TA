@@ -38,6 +38,7 @@ class ArtistDetail extends Component {
             ? <Loading />
             : [worksList]
           }
+          {!works.length && <li>No works found</li>}
         </ul>
       </>
     );
