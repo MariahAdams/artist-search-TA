@@ -5,12 +5,6 @@ import Search from '../search/Search';
 import ArtistDetail from '../artists/ArtistDetail';
 import ArtistWork from '../artists/ArtistWork';
 import Footer from './Footer';
-//TODO: 
-// paging
-// nav --> back to search
-// header, footer
-// css
-// better error handling
 
 class App extends PureComponent {
 
@@ -37,3 +31,17 @@ class App extends PureComponent {
 
 
 export default App;
+
+
+
+
+
+
+
+
+//TODO: 
+// paging
+// nav --> back to search
+// header, footer
+// css
+// better error handling
