@@ -13,18 +13,17 @@ class ArtistDetail extends Component {
     match: PropTypes.object
   };
 
-  // componentDidMount() {
-  //   const { match } = this.props;
-  //   getWorks(match.params.id)
-  //     .then(res => {
-  //       this.setState({ works: res.works });
-  //       console.log('works', this.state.works);
-  //     });
-  // }
+  componentDidMount() {
+    const { match } = this.props;
+    getWorks(match.params.id)
+      .then(res => {
+        this.setState({ works: res.works });
+      });
+  }
 
   render() {
     const { works } = this.state;
-    const { artist } = this.props.match.params;
+    const artist = this.props.match.params;
 
     const worksList = works.map(work => {
       return <li key={work.id}>
