@@ -1,5 +1,16 @@
 .header {
 
   color: gray;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". header nav";
 
+  h1 {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: nav;
+    align-self: center;
+  }
 }

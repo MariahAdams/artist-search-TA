@@ -1,49 +1,33 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
+import Search from '../search/Search';
+import ArtistDetail from '../artists/ArtistDetail';
+import ArtistWork from '../artists/ArtistWork';
 import Footer from './Footer';
-import { getCharacters } from '../../services/api';
 
-class App extends Component {
-
-  state = {
-    loading: false,
-    test: ''
-  };
-
-  fetchData = () => {
-    this.setState({ loading: true, test: '' });
-    
-    getCharacters()
-      .then((res) => this.setState({ loading: false, test: res.results })); 
-  };
+class App extends PureComponent {
 
   render() {
-    const { loading, test } = this.state;
 
     return (
-      <Fragment>
-        <Header />
+      <Router>
+        <>
+          <Header />
 
-        <main>
-					Welcome to zApp!
-          <div>
-            <button onClick={this.fetchData}>TRY ME</button>
-          </div>
-          {test && <p>{test}</p>}
-          {loading && <Loading />}
-        </main>
+          <Switch>
+            <Route path="/artists/:artist/:work/:id" component={ArtistWork} />
+            <Route path="/artists/:artist/:id" component={ArtistDetail} />
+            <Route path="/" component={Search} />
+            <Redirect to="/home" />
+          </Switch>
 
-        <Footer />
-      </Fragment>
+          <Footer />
+        </>
+      </Router>
     );
   }
 }
 
-function Loading() {
-
-  return (
-    <pre>Loading...</pre>
-  );
-}
 
 export default App;
